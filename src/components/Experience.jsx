@@ -1,4 +1,4 @@
-import { Float, PerspectiveCamera, useScroll } from "@react-three/drei";
+import { Float, Html, PerspectiveCamera, useScroll } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { gsap } from "gsap";
 import { useLayoutEffect, useMemo, useRef } from "react";
