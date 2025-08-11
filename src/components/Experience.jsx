@@ -376,7 +376,7 @@ export const Experience = () => {
     // FADE SHADER UPDATE
     if (state.camera) {
         state.scene.traverse((obj) => {
-            if (obj.material && obj.material.onBeforeCompile === fadeOnBeforeCompile) {
+            if (obj.material && obj.material.onBeforeCompile === fadeOnBeforeCompile && obj.material.uniforms && obj.material.uniforms.uOrigin) {
                 obj.material.uniforms.uOrigin.value.copy(cameraGroup.current.position);
             }
         });
