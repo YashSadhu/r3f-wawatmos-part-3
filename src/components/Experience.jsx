@@ -42,25 +42,25 @@ export const Experience = () => {
         cameraRailDist: -1,
         position: new Vector3(curvePoints[1].x - 3, curvePoints[1].y, curvePoints[1].z),
         title: "Hi, I'm Yashkumar Sadhu",
-        subtitle: `Creative developer and storyteller, crafting digital experiences that blend innovation with narrative.`,
+        subtitle: `Creative developer and storyteller.\nI craft digital experiences.\nI blend innovation with narrative.`,
       },
       {
         cameraRailDist: 1.5,
         position: new Vector3(curvePoints[2].x + 2, curvePoints[2].y, curvePoints[2].z),
         title: "Featured Projects",
-        subtitle: `Turning ideas into impactful digital solutions.\n\n\uD83D\uDCD1 Web Application: NeedItBuildIt — A powerful story management platform for writers. [Visit Project](https://needitbuildit.site/)\n\n✨ Creative Portfolio: Work Portfolio — Showcasing diverse skills and creative work. [View Portfolio](https://drive.google.com/drive/folders/1zHvTX9ayMYKXl8AjZApwklEWbsIESgAI)`
+        subtitle: `Turning ideas into impactful digital solutions.\n\n📖 Web Application: NeedItBuildIt [Visit](https://needitbuildit.site/)\n✨ Creative Portfolio: [View](https://drive.google.com/drive/folders/1zHvTX9ayMYKXl8AjZApwklEWbsIESgAI)`
       },
       {
         cameraRailDist: -1,
         position: new Vector3(curvePoints[3].x - 3, curvePoints[3].y, curvePoints[3].z),
         title: "Fun Experiments",
-        subtitle: `Interactive creations exploring human experience.\n\n📊 Life Visualization — [View Here](https://tubular-begonia-4c5989.netlify.app/)\n📱 BuzzLoop Demo — [Try It](https://eclectic-sunshine-4f0f7e.netlify.app/)`
+        subtitle: `Exploring human experience with interactive creations.\n\n📊 Life Visualization: [View](https://tubular-begonia-4c5989.netlify.app/)\n📱 BuzzLoop Demo: [Try](https://eclectic-sunshine-4f0f7e.netlify.app/)`
       },
       {
         cameraRailDist: 1.5,
         position: new Vector3(curvePoints[4].x + 3.5, curvePoints[4].y, curvePoints[4].z - 12),
         title: "Let's Connect",
-        subtitle: `Ready to create something amazing together?\n\n📧 Email: yashsadhu1605@gmail.com\n𝕏 Twitter: [@yashsadhu09](https://x.com/yashsadhu09)\n💼 LinkedIn: [yash-sadhu](https://linkedin.com/in/yash-sadhu)`
+        subtitle: `Ready to create something amazing?\n\n📧 Email: yashsadhu1605@gmail.com\n𝕏 Twitter: [@yashsadhu09](https://x.com/yashsadhu09)\n💼 LinkedIn: [yash-sadhu](https://linkedin.com/in/yash-sadhu)`
       },
     ];
   }, []);
@@ -153,6 +153,11 @@ export const Experience = () => {
 
   return (
     <>
+      {/* Top-right link button */}
+      <Html position={[0, 2, 0]} style={{ position: "fixed", top: "20px", right: "20px" }}>
+        <button onClick={() => window.open("https://your-links-page.com", "_blank")} style={{ padding: "8px 12px", background: "#e63946", color: "white", border: "none", borderRadius: "8px" }}>Links</button>
+      </Html>
+
       <directionalLight position={[0, 3, 1]} intensity={0.1} />
       <group ref={cameraGroup}>
         <Background backgroundColors={backgroundColors} />
@@ -169,6 +174,11 @@ export const Experience = () => {
       {textSections.map((textSection, index) => (
         <TextSection {...textSection} key={index} />
       ))}
+
+      {/* End of path link button */}
+      <Html position={[0, -1, curvePoints[curvePoints.length - 1].z]}>
+        <button onClick={() => window.open("https://your-links-page.com", "_blank")} style={{ padding: "8px 12px", background: "#e63946", color: "white", border: "none", borderRadius: "8px" }}>Go to Links</button>
+      </Html>
 
       <group position-y={-2}>
         <mesh>
