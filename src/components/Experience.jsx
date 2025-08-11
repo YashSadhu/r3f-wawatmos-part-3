@@ -82,6 +82,21 @@ export const Experience = () => {
           { text: "💼 LinkedIn: yash-sadhu", url: "https://linkedin.com/in/yash-sadhu" }
         ]
       },
+      {
+        cameraRailDist: 0,
+        position: new Vector3(curvePoints[5].x, curvePoints[5].y + 2, curvePoints[5].z),
+        title: "All My Links",
+        subtitle: `Everything you need to connect and explore my work.`,
+        links: [
+          { text: "📖 NeedItBuildIt - Web Application", url: "https://needitbuildit.site/" },
+          { text: "✨ Creative Portfolio Collection", url: "https://drive.google.com/drive/folders/1zHvTX9ayMYKXl8AjZApwklEWbsIESgAI" },
+          { text: "📊 Life Visualization Experience", url: "https://tubular-begonia-4c5989.netlify.app/" },
+          { text: "📱 BuzzLoop Interactive Demo", url: "https://eclectic-sunshine-4f0f7e.netlify.app/" },
+          { text: "📧 Email: yashsadhu1605@gmail.com", url: "mailto:yashsadhu1605@gmail.com" },
+          { text: "𝕏 Follow on Twitter", url: "https://x.com/yashsadhu09" },
+          { text: "💼 Connect on LinkedIn", url: "https://linkedin.com/in/yash-sadhu" }
+        ]
+      },
     ];
   }, []);
 

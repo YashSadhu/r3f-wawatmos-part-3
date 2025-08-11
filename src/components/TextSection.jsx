@@ -39,11 +39,11 @@ export const TextSection = ({ title, subtitle, links, ...props }) => {
       </Text>
       
       {links && (
-        <Html position={[0, -0.8, 0]} style={{ width: '400px' }}>
+        <Html position={[0, 1.2, 0]} style={{ width: '300px' }}>
           <div style={{ 
             display: 'flex', 
             flexDirection: 'column', 
-            gap: '8px',
+            gap: '4px',
             fontFamily: 'Inter, sans-serif'
           }}>
             {links.map((link, index) => (
@@ -55,10 +55,10 @@ export const TextSection = ({ title, subtitle, links, ...props }) => {
                 style={{
                   color: 'white',
                   textDecoration: 'none',
-                  fontSize: '14px',
-                  padding: '8px 12px',
+                  fontSize: '11px',
+                  padding: '4px 8px',
                   background: 'rgba(255, 255, 255, 0.1)',
-                  borderRadius: '8px',
+                  borderRadius: '6px',
                   border: '1px solid rgba(255, 255, 255, 0.2)',
                   transition: 'all 0.3s ease',
                   cursor: 'pointer',
@@ -66,11 +66,11 @@ export const TextSection = ({ title, subtitle, links, ...props }) => {
                 }}
                 onMouseEnter={(e) => {
                   e.target.style.background = 'rgba(255, 255, 255, 0.2)';
-                  e.target.style.transform = 'translateX(5px)';
+                  e.target.style.transform = 'translateY(-2px)';
                 }}
                 onMouseLeave={(e) => {
                   e.target.style.background = 'rgba(255, 255, 255, 0.1)';
-                  e.target.style.transform = 'translateX(0)';
+                  e.target.style.transform = 'translateY(0)';
                 }}
               >
                 {link.text}
