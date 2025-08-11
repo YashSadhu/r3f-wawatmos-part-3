@@ -37,48 +37,6 @@ export const TextSection = ({ title, subtitle, links, ...props }) => {
           onBeforeCompile={fadeOnBeforeCompileFlat}
         />
       </Text>
-      
-      {links && (
-        <Html position={[0, 1.2, 0]} style={{ width: '300px' }}>
-          <div style={{ 
-            display: 'flex', 
-            flexDirection: 'column', 
-            gap: '4px',
-            fontFamily: 'Inter, sans-serif'
-          }}>
-            {links.map((link, index) => (
-              <a
-                key={index}
-                href={link.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  color: 'white',
-                  textDecoration: 'none',
-                  fontSize: '11px',
-                  padding: '4px 8px',
-                  background: 'rgba(255, 255, 255, 0.1)',
-                  borderRadius: '6px',
-                  border: '1px solid rgba(255, 255, 255, 0.2)',
-                  transition: 'all 0.3s ease',
-                  cursor: 'pointer',
-                  backdropFilter: 'blur(10px)'
-                }}
-                onMouseEnter={(e) => {
-                  e.target.style.background = 'rgba(255, 255, 255, 0.2)';
-                  e.target.style.transform = 'translateY(-2px)';
-                }}
-                onMouseLeave={(e) => {
-                  e.target.style.background = 'rgba(255, 255, 255, 0.1)';
-                  e.target.style.transform = 'translateY(0)';
-                }}
-              >
-                {link.text}
-              </a>
-            ))}
-          </div>
-        </Html>
-      )}
     </group>
   );
 };

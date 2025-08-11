@@ -49,53 +49,25 @@ export const Experience = () => {
         cameraRailDist: -1,
         position: new Vector3(curvePoints[1].x - 3, curvePoints[1].y, curvePoints[1].z),
         title: "Hi, I'm Yashkumar Sadhu",
-        subtitle: `Creative developer and storyteller.\nI craft digital experiences.\nI blend innovation with narrative.`,
+        subtitle: `Creative developer and storyteller.\nI craft digital experiences.\nI blend innovation with narrative.`
       },
       {
         cameraRailDist: 1.5,
         position: new Vector3(curvePoints[2].x + 2, curvePoints[2].y, curvePoints[2].z),
         title: "Featured Projects",
-        subtitle: `Turning ideas into impactful digital solutions.`,
-        links: [
-          { text: "📖 Web Application: NeedItBuildIt", url: "https://needitbuildit.site/" },
-          { text: "✨ Creative Portfolio", url: "https://drive.google.com/drive/folders/1zHvTX9ayMYKXl8AjZApwklEWbsIESgAI" }
-        ]
+        subtitle: `Turning ideas into impactful digital solutions.\nWeb applications, creative portfolios, and more.`
       },
       {
         cameraRailDist: -1,
         position: new Vector3(curvePoints[3].x - 3, curvePoints[3].y, curvePoints[3].z),
         title: "Fun Experiments",
-        subtitle: `Exploring human experience with interactive creations.`,
-        links: [
-          { text: "📊 Life Visualization", url: "https://tubular-begonia-4c5989.netlify.app/" },
-          { text: "📱 BuzzLoop Demo", url: "https://eclectic-sunshine-4f0f7e.netlify.app/" }
-        ]
+        subtitle: `Exploring human experience with interactive creations.\nVisualization tools and demo applications.`
       },
       {
         cameraRailDist: 1.5,
         position: new Vector3(curvePoints[4].x + 3.5, curvePoints[4].y, curvePoints[4].z - 12),
         title: "Let's Connect",
-        subtitle: `Ready to create something amazing?`,
-        links: [
-          { text: "📧 Email: yashsadhu1605@gmail.com", url: "mailto:yashsadhu1605@gmail.com" },
-          { text: "𝕏 Twitter: @yashsadhu09", url: "https://x.com/yashsadhu09" },
-          { text: "💼 LinkedIn: yash-sadhu", url: "https://linkedin.com/in/yash-sadhu" }
-        ]
-      },
-      {
-        cameraRailDist: 0,
-        position: new Vector3(curvePoints[5].x, curvePoints[5].y + 2, curvePoints[5].z),
-        title: "All My Links",
-        subtitle: `Everything you need to connect and explore my work.`,
-        links: [
-          { text: "📖 NeedItBuildIt - Web Application", url: "https://needitbuildit.site/" },
-          { text: "✨ Creative Portfolio Collection", url: "https://drive.google.com/drive/folders/1zHvTX9ayMYKXl8AjZApwklEWbsIESgAI" },
-          { text: "📊 Life Visualization Experience", url: "https://tubular-begonia-4c5989.netlify.app/" },
-          { text: "📱 BuzzLoop Interactive Demo", url: "https://eclectic-sunshine-4f0f7e.netlify.app/" },
-          { text: "📧 Email: yashsadhu1605@gmail.com", url: "mailto:yashsadhu1605@gmail.com" },
-          { text: "𝕏 Follow on Twitter", url: "https://x.com/yashsadhu09" },
-          { text: "💼 Connect on LinkedIn", url: "https://linkedin.com/in/yash-sadhu" }
-        ]
+        subtitle: `Ready to create something amazing?\nClick the Links button above to connect with me.`
       },
     ];
   }, []);
