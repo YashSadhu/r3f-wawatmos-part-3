@@ -1,6 +1,6 @@
 import React from 'react';
 
-const LinksPage = () => {
+const LinksPage = ({ setShowLinksPage }) => {
   const links = [
     {
       category: "Featured Projects",
@@ -63,11 +63,46 @@ const LinksPage = () => {
 
   return (
     <div style={{
-      minHeight: '100vh',
+      position: 'fixed',
+      top: 0,
+      left: 0,
+      width: '100%',
+      height: '100%',
       background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
       padding: '40px 20px',
-      fontFamily: 'Inter, sans-serif'
+      fontFamily: 'Inter, sans-serif',
+      overflowY: 'auto',
+      zIndex: 1000
     }}>
+      <button 
+        onClick={() => setShowLinksPage(false)} 
+        style={{ 
+          position: 'absolute',
+          top: '20px',
+          right: '20px',
+          background: 'rgba(255, 255, 255, 0.2)',
+          border: 'none',
+          borderRadius: '50%',
+          width: '40px',
+          height: '40px',
+          color: 'white',
+          fontSize: '18px',
+          cursor: 'pointer',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          transition: 'all 0.3s ease'
+        }}
+        onMouseEnter={(e) => {
+          e.target.style.background = 'rgba(255, 255, 255, 0.3)';
+        }}
+        onMouseLeave={(e) => {
+          e.target.style.background = 'rgba(255, 255, 255, 0.2)';
+        }}
+      >
+        ×
+      </button>
+      
       <div style={{
         maxWidth: '800px',
         margin: '0 auto',
