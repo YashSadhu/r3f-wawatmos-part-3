@@ -40,13 +40,13 @@ export const Experience = ({ setShowLinksPage }) => {
   const textSections = useMemo(() => {
     return [
       {
-        cameraRailDist: -3,
+        cameraRailDist: -2,
         position: new Vector3(curvePoints[1].x - 3, curvePoints[1].y, curvePoints[1].z),
         title: "Hi, I'm Yashkumar Sadhu",
         subtitle: `Creative developer and storyteller.\nI craft digital experiences.\nI blend innovation with narrative.`
       },
       {
-        cameraRailDist: 1.5,
+        cameraRailDist: 2,
         position: new Vector3(curvePoints[2].x + 2, curvePoints[2].y, curvePoints[2].z),
         title: "Featured Projects",
         subtitle: `Turning ideas into impactful digital solutions.\nWeb applications, creative portfolios, and more.`
