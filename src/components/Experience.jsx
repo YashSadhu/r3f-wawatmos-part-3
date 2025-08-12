@@ -41,7 +41,7 @@ export const Experience = ({ setShowLinksPage }) => {
     return [
       {
         cameraRailDist: -2,
-        position: new Vector3(curvePoints[1].x - 3, curvePoints[0].y, curvePoints[0].z),
+        position: new Vector3(curvePoints[1].x - 3, curvePoints[0.5].y, curvePoints[0].z),
         title: "Hi, I'm Yashkumar Sadhu",
         subtitle: `Creative developer and storyteller.\nI craft digital experiences.\nI blend innovation with narrative.`
       },
