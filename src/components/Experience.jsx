@@ -1,7 +1,7 @@
 import { Float, Html, PerspectiveCamera, useScroll } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { gsap } from "gsap";
-import { useLayoutEffect, useMemo, useRef, useState } from "react";
+import { useLayoutEffect, useMemo, useRef } from "react";
 import * as THREE from "three";
 import { Euler, Group, Vector3 } from "three";
 import { fadeOnBeforeCompile } from "../utils/fadeMaterial";
@@ -9,7 +9,6 @@ import { Airplane } from "./Airplane";
 import { Background } from "./Background";
 import { Cloud } from "./Cloud";
 import { TextSection } from "./TextSection";
-import LinksPage from "./LinksPage";
 
 const LINE_NB_POINTS = 1000;
 const CURVE_DISTANCE = 250;
@@ -18,12 +17,7 @@ const CURVE_AHEAD_AIRPLANE = 0.02;
 const AIRPLANE_MAX_ANGLE = 35;
 const FRICTION_DISTANCE = 42;
 
-export const Experience = () => {
-  const [showLinksPage, setShowLinksPage] = useState(false);
-
-  if (showLinksPage) {
-    return <LinksPage />;
-  }
+export const Experience = ({ setShowLinksPage }) => {
 
   const curvePoints = useMemo(
     () => [
