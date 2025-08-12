@@ -160,26 +160,27 @@ export const Experience = ({ setShowLinksPage }) => {
           onClick={() => setShowLinksPage(true)} 
           style={{ 
             padding: "10px 16px", 
-            background: "linear-gradient(45deg, #667eea, #764ba2)", 
+            background: "rgba(0, 0, 0, 0.8)", 
             color: "white", 
-            border: "none", 
+            border: "1px solid rgba(255, 255, 255, 0.2)", 
             borderRadius: "12px",
             cursor: "pointer",
             fontSize: "14px",
             fontWeight: "600",
-            boxShadow: "0 4px 15px rgba(0,0,0,0.2)",
+            boxShadow: "0 4px 15px rgba(0,0,0,0.4)",
+            backdropFilter: "blur(10px)",
             transition: "all 0.3s ease"
           }}
           onMouseEnter={(e) => {
             e.target.style.transform = "translateY(-2px)";
-            e.target.style.boxShadow = "0 6px 20px rgba(0,0,0,0.3)";
+            e.target.style.background = "rgba(255, 255, 255, 0.1)";
           }}
           onMouseLeave={(e) => {
             e.target.style.transform = "translateY(0)";
-            e.target.style.boxShadow = "0 4px 15px rgba(0,0,0,0.2)";
+            e.target.style.background = "rgba(0, 0, 0, 0.8)";
           }}
         >
-          Links
+          VIEW ALL LINKS
         </button>
       </Html>
 
@@ -201,33 +202,6 @@ export const Experience = ({ setShowLinksPage }) => {
       ))}
 
       {/* End of path link button */}
-      <Html position={[0, -1, curvePoints[curvePoints.length - 1].z]}>
-        <button 
-          onClick={() => setShowLinksPage(true)} 
-          style={{ 
-            padding: "12px 20px", 
-            background: "linear-gradient(45deg, #667eea, #764ba2)", 
-            color: "white", 
-            border: "none", 
-            borderRadius: "12px",
-            cursor: "pointer",
-            fontSize: "16px",
-            fontWeight: "600",
-            boxShadow: "0 4px 15px rgba(0,0,0,0.2)",
-            transition: "all 0.3s ease"
-          }}
-          onMouseEnter={(e) => {
-            e.target.style.transform = "translateY(-2px)";
-            e.target.style.boxShadow = "0 6px 20px rgba(0,0,0,0.3)";
-          }}
-          onMouseLeave={(e) => {
-            e.target.style.transform = "translateY(0)";
-            e.target.style.boxShadow = "0 4px 15px rgba(0,0,0,0.2)";
-          }}
-        >
-          View All Links
-        </button>
-      </Html>
 
       <group position-y={-2}>
         <mesh>

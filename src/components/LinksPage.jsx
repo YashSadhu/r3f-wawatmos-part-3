@@ -67,21 +67,32 @@ const LinksPage = ({ setShowLinksPage }) => {
       top: 0,
       left: 0,
       width: '100%',
-      height: '100%',
-      background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-      padding: '40px 20px',
+      height: '100vh',
+      background: `
+        radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.3), transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1), transparent 50%),
+        radial-gradient(circle at 40% 80%, rgba(120, 119, 198, 0.2), transparent 50%),
+        #1a1a1a
+      `,
       fontFamily: 'Inter, sans-serif',
-      overflowY: 'auto',
-      zIndex: 1000
+      overflow: 'hidden',
+      zIndex: 1000,
+      backgroundImage: `
+        radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px),
+        radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px)
+      `,
+      backgroundSize: '20px 20px, 40px 40px',
+      backgroundPosition: '0 0, 20px 20px'
     }}>
+      {/* Close button */}
       <button 
         onClick={() => setShowLinksPage(false)} 
         style={{ 
           position: 'absolute',
           top: '20px',
           right: '20px',
-          background: 'rgba(255, 255, 255, 0.2)',
-          border: 'none',
+          background: 'rgba(0, 0, 0, 0.8)',
+          border: '1px solid rgba(255, 255, 255, 0.2)',
           borderRadius: '50%',
           width: '40px',
           height: '40px',
@@ -91,136 +102,131 @@ const LinksPage = ({ setShowLinksPage }) => {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          transition: 'all 0.3s ease'
+          transition: 'all 0.3s ease',
+          backdropFilter: 'blur(10px)'
         }}
         onMouseEnter={(e) => {
-          e.target.style.background = 'rgba(255, 255, 255, 0.3)';
+          e.target.style.background = 'rgba(255, 255, 255, 0.1)';
         }}
         onMouseLeave={(e) => {
-          e.target.style.background = 'rgba(255, 255, 255, 0.2)';
+          e.target.style.background = 'rgba(0, 0, 0, 0.8)';
         }}
       >
         ×
       </button>
       
+      {/* Main content - no scrolling needed */}
       <div style={{
-        maxWidth: '800px',
-        margin: '0 auto',
+        height: '100vh',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        padding: '20px',
         color: 'white'
       }}>
-        <header style={{ textAlign: 'center', marginBottom: '60px' }}>
+        {/* Header */}
+        <div style={{ textAlign: 'center', marginBottom: '40px' }}>
           <h1 style={{
-            fontSize: '3rem',
+            fontSize: '2.5rem',
             fontWeight: 'bold',
-            marginBottom: '20px',
-            background: 'linear-gradient(45deg, #fff, #f0f0f0)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            backgroundClip: 'text'
+            marginBottom: '10px',
+            color: 'white',
+            textShadow: '0 2px 10px rgba(0,0,0,0.5)'
           }}>
             Yashkumar Sadhu
           </h1>
           <p style={{
-            fontSize: '1.2rem',
-            opacity: 0.9,
-            maxWidth: '600px',
-            margin: '0 auto',
-            lineHeight: '1.6'
+            fontSize: '1rem',
+            opacity: 0.8,
+            margin: 0
           }}>
-            Creative developer and storyteller crafting digital experiences that blend innovation with narrative.
+            Creative developer and storyteller
           </p>
-        </header>
+        </div>
 
-        {links.map((section, sectionIndex) => (
-          <section key={sectionIndex} style={{ marginBottom: '50px' }}>
-            <h2 style={{
-              fontSize: '1.8rem',
-              fontWeight: '600',
-              marginBottom: '30px',
-              textAlign: 'center',
-              opacity: 0.95
+        {/* Links grid - compact layout */}
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(3, 1fr)',
+          gap: '20px',
+          maxWidth: '900px',
+          width: '100%'
+        }}>
+          {links.map((section, sectionIndex) => (
+            <div key={sectionIndex} style={{
+              background: 'rgba(0, 0, 0, 0.4)',
+              backdropFilter: 'blur(10px)',
+              border: '1px solid rgba(255, 255, 255, 0.1)',
+              borderRadius: '12px',
+              padding: '20px'
             }}>
-              {section.category}
-            </h2>
-            
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-              gap: '20px'
-            }}>
-              {section.items.map((link, linkIndex) => (
-                <a
-                  key={linkIndex}
-                  href={link.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{
-                    display: 'block',
-                    background: 'rgba(255, 255, 255, 0.1)',
-                    backdropFilter: 'blur(10px)',
-                    border: '1px solid rgba(255, 255, 255, 0.2)',
-                    borderRadius: '16px',
-                    padding: '24px',
-                    textDecoration: 'none',
-                    color: 'white',
-                    transition: 'all 0.3s ease',
-                    cursor: 'pointer'
-                  }}
-                  onMouseEnter={(e) => {
-                    e.target.style.transform = 'translateY(-5px)';
-                    e.target.style.background = 'rgba(255, 255, 255, 0.15)';
-                    e.target.style.borderColor = 'rgba(255, 255, 255, 0.3)';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.target.style.transform = 'translateY(0)';
-                    e.target.style.background = 'rgba(255, 255, 255, 0.1)';
-                    e.target.style.borderColor = 'rgba(255, 255, 255, 0.2)';
-                  }}
-                >
-                  <div style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    marginBottom: '12px'
-                  }}>
-                    <span style={{
-                      fontSize: '1.5rem',
-                      marginRight: '12px'
-                    }}>
+              <h3 style={{
+                fontSize: '1.1rem',
+                fontWeight: '600',
+                marginBottom: '15px',
+                textAlign: 'center',
+                opacity: 0.9,
+                color: 'white'
+              }}>
+                {section.category}
+              </h3>
+              
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                {section.items.map((link, linkIndex) => (
+                  <a
+                    key={linkIndex}
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      background: 'rgba(255, 255, 255, 0.05)',
+                      border: '1px solid rgba(255, 255, 255, 0.1)',
+                      borderRadius: '8px',
+                      padding: '10px',
+                      textDecoration: 'none',
+                      color: 'white',
+                      transition: 'all 0.3s ease',
+                      cursor: 'pointer'
+                    }}
+                    onMouseEnter={(e) => {
+                      e.target.style.background = 'rgba(255, 255, 255, 0.1)';
+                      e.target.style.transform = 'translateY(-2px)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.target.style.background = 'rgba(255, 255, 255, 0.05)';
+                      e.target.style.transform = 'translateY(0)';
+                    }}
+                  >
+                    <span style={{ fontSize: '1.2rem', marginRight: '10px' }}>
                       {link.icon}
                     </span>
-                    <h3 style={{
-                      fontSize: '1.3rem',
-                      fontWeight: '600',
-                      margin: 0
-                    }}>
-                      {link.title}
-                    </h3>
-                  </div>
-                  <p style={{
-                    fontSize: '1rem',
-                    opacity: 0.8,
-                    margin: 0,
-                    lineHeight: '1.5'
-                  }}>
-                    {link.description}
-                  </p>
-                </a>
-              ))}
+                    <div>
+                      <div style={{ fontSize: '0.9rem', fontWeight: '600' }}>
+                        {link.title}
+                      </div>
+                      <div style={{ fontSize: '0.75rem', opacity: 0.7 }}>
+                        {link.description}
+                      </div>
+                    </div>
+                  </a>
+                ))}
+              </div>
             </div>
-          </section>
-        ))}
+          ))}
+        </div>
 
-        <footer style={{
+        {/* Footer */}
+        <div style={{
           textAlign: 'center',
-          marginTop: '80px',
-          paddingTop: '40px',
-          borderTop: '1px solid rgba(255, 255, 255, 0.2)',
-          opacity: 0.7
+          marginTop: '30px',
+          opacity: 0.6,
+          fontSize: '0.8rem'
         }}>
-          <p style={{ margin: 0, fontSize: '0.9rem' }}>
-            © 2025 Yashkumar Sadhu. Crafted with passion and creativity.
-          </p>
-        </footer>
+          © 2025 Yashkumar Sadhu. Crafted with passion and creativity.
+        </div>
       </div>
     </div>
   );
