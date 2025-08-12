@@ -154,30 +154,42 @@ export const Experience = ({ setShowLinksPage }) => {
 
   return (
     <>
-      {/* Top-right link button */}
-      <Html position={[0, 2, 0]} style={{ position: "fixed", top: "20px", right: "20px" }}>
+      {/* Fixed top-right link button */}
+      <Html 
+        position={[0, 0, 0]} 
+        transform={false}
+        occlude={false}
+        style={{ 
+          position: "fixed", 
+          top: "20px", 
+          right: "20px",
+          zIndex: 1000,
+          pointerEvents: "auto"
+        }}
+      >
         <button 
           onClick={() => setShowLinksPage(true)} 
           style={{ 
             padding: "10px 16px", 
-            background: "rgba(0, 0, 0, 0.8)", 
+            background: "rgba(0, 0, 0, 0.9)", 
             color: "white", 
-            border: "1px solid rgba(255, 255, 255, 0.2)", 
+            border: "1px solid rgba(255, 255, 255, 0.3)", 
             borderRadius: "12px",
             cursor: "pointer",
             fontSize: "14px",
             fontWeight: "600",
-            boxShadow: "0 4px 15px rgba(0,0,0,0.4)",
+            boxShadow: "0 4px 20px rgba(0,0,0,0.6)",
             backdropFilter: "blur(10px)",
-            transition: "all 0.3s ease"
+            transition: "all 0.3s ease",
+            zIndex: 1001
           }}
           onMouseEnter={(e) => {
             e.target.style.transform = "translateY(-2px)";
-            e.target.style.background = "rgba(255, 255, 255, 0.1)";
+            e.target.style.background = "rgba(255, 255, 255, 0.15)";
           }}
           onMouseLeave={(e) => {
             e.target.style.transform = "translateY(0)";
-            e.target.style.background = "rgba(0, 0, 0, 0.8)";
+            e.target.style.background = "rgba(0, 0, 0, 0.9)";
           }}
         >
           VIEW ALL LINKS
